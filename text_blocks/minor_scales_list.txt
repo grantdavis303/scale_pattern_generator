@@ -1,0 +1,31 @@
+Minor Scales:
+
+Minor Scales (w/o ♭ or ♯):
+
+16. A Minor Scale = A, B, C, D, E, F, G, A
+
+Minor Scales (w/ ♯):
+
+17. E Minor Scale = E, F♯, G, A, B, C, D, E
+18. B Minor Scale = B, C♯, D, E, F♯, G, A, B
+19. F Sharp Minor Scale = F♯, G♯, A, B, C♯, D, E, F♯
+20. C Sharp Minor Scale = C♯, D♯, E, F♯, G♯, A, B, C♯
+
+Minor Scales (w/ ♭):
+
+21. F Minor Scale = F, G, A♭, B♭, C, D♭, E♭, F
+22. C Minor Scale = C, D, E♭, F, G, A♭, B♭, C
+23. F Minor Scale = G, A, B♭, C, D, E♭, F, G
+24. D Minor Scale = D, E, F, G, A, B♭, C, D
+
+Enharmonic Minor Scales (same pitches but different note names):
+
+25. G Sharp Minor Scale = G♯, A♯, B, C♯, D♯, E, F♯, G♯
+26. A Flat Minor Scale = A♭, B♭, C♭, D♭, E♭, F♭, G♭, A♭
+
+27. D Sharp Minor Scale = D♯, E♯, F♯, G♯, A♯, B, C♯, D♯
+28. E Flat Minor Scale = E♭, F, G♭, A♭, B♭, C♭, D♭, E♭
+
+29. A Sharp Minor Scale = A♯, B♯, C♯, D♯, E♯, F♯, G♯, A♯
+30. B Flat Minor Scale = B♭, C, D♭, E♭, F, G♭, A♭, B♭
+

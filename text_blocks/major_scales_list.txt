@@ -1,0 +1,31 @@
+Major Scales:
+
+Major Scales (w/o ♭ or ♯):
+
+1. C Major = C, D, E, F, G, A, B, C
+
+Major Scales (w/ ♯):
+
+2. G Major = G, A, B, C, D, E, F♯, G
+3. D Major = D, E, F♯, G, A, B, C♯, D
+4. A Major = A, B, C♯, D, E, F♯, F♯, A
+5. E Major = E, F♯, G♯, A, B, C♯, D♯, E
+
+Major Scales (w/ ♭):
+
+6. F Major = F, G, A, B♭, C, D, E, F
+7. B Flat Major = B♭, C, D, E♭, F, G, A, B♭
+8. E Flat Major = E♭, F, G, A♭, B♭, C, D, E♭
+9. A Flat Major = A♭, B♭, C, D♭, E♭, F, G, A♭
+
+Enharmonic Major Scales (same pitches but different note names):
+
+10. B Major = B, C♯, D♯, E, F♯, G♯, A♯, B
+11. C Flat Major = C♭, D♭, E♭, F♭, G♭, A♭, B♭, C♭
+
+12. F Sharp Major = F♯, G♯, A♯, B, C♯, D♯, E♯, F♯
+13. G Flat Major = G♭, A♭, B♭, C♭, D♭, E♭, F, G♭
+
+14. C Sharp Major = C♯, D♯, E♯, F♯, G♯, A♯, B♯, C♯
+15. D Flat Major = D♭, E♭, F, G♭, A♭, B♭, C, D♭
+
