@@ -8,7 +8,7 @@ Major Scales (w/ ♯):
 
 2. G Major = G, A, B, C, D, E, F♯, G
 3. D Major = D, E, F♯, G, A, B, C♯, D
-4. A Major = A, B, C♯, D, E, F♯, F♯, A
+4. A Major = A, B, C♯, D, E, F♯, G♯, A
 5. E Major = E, F♯, G♯, A, B, C♯, D♯, E
 
 Major Scales (w/ ♭):
