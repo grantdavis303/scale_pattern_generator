@@ -6,7 +6,7 @@ major_scales_list = File.read('./text_blocks/major_scales_list.txt')
 minor_scales_list = File.read('./text_blocks/minor_scales_list.txt')
 
 intro_text_block = TextBlock.new("Intro Block Text", intro_text)
-major_scale_text_block = TextBlock.new("Major Scale List", major_scales_list)
+major_scales_text_block = TextBlock.new("Major Scale List", major_scales_list)
 minor_scales_text_block = TextBlock.new("Minor Scale List", minor_scales_list)
 
 # Scale Pattern Generator Program
@@ -16,7 +16,7 @@ puts intro_text_block.content
 scales_list_input = gets.chomp.to_i
 
 if scales_list_input == 1
-  puts major_scale_text_block.content
+  puts major_scales_text_block.content
 elsif scales_list_input == 2
   puts minor_scales_text_block.content
 else
