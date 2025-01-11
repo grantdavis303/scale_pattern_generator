@@ -56,12 +56,12 @@ end
 
 puts "\n"
 
-puts "Beat Count? Please choose between 4, 8, 16, and 32."
+puts "Beat Count? Please choose between 2, 4, 8, 16, and 32."
 beat_count = gets.chomp.to_i
 
 puts "\n"
 
-if [4, 8, 16, 32].include?(beat_count)
+if [2, 4, 8, 16, 32].include?(beat_count)
   new_scale_pattern = Array.new
 
   length = scale.length
