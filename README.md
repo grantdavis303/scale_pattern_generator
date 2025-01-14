@@ -1,6 +1,6 @@
 # Scale Pattern Generator
 
-A simple Ruby program that generates a pattern based off a musical scale.
+A simple Ruby program that generates a pattern based off a given musical scale.
 
 ## Dependencies
 
