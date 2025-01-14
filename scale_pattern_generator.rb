@@ -9,10 +9,42 @@ intro_text_block = TextBlock.new(intro_text)
 major_scales_text_block = TextBlock.new(major_scales_list)
 minor_scales_text_block = TextBlock.new(minor_scales_list)
 
+scales = {
+  '1': ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
+  '2': ['G', 'A', 'B', 'C', 'D', 'E', 'F♯', 'G'],
+  '3': ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯', 'D'],
+  '4': ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯', 'A'],
+  '5': ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯', 'E'],
+  '6': ['F', 'G', 'A', 'B♭', 'C', 'D', 'E', 'F'],
+  '7': ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A', 'B♭'],
+  '8': ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D', 'E♭'],
+  '9': ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G', 'A♭'],
+  '10': ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯', 'B'],
+  '11': ['C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭', 'B♭', 'C♭'],
+  '12': ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯', 'F♯'],
+  '13': ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F', 'G♭'],
+  '14': ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯', 'C♯'],
+  '15': ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C', 'D♭'],
+  '16': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A'],
+  '17': ['E', 'F♯', 'G', 'A', 'B', 'C', 'D', 'E'],
+  '18': ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A', 'B'],
+  '19': ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E', 'F♯'],
+  '20': ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B', 'C♯'],
+  '21': ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭', 'F'],
+  '22': ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭', 'C'],
+  '23': ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F', 'G'],
+  '24': ['D', 'E', 'F', 'G', 'A', 'B♭', 'C', 'D'],
+  '25': ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯', 'G♯'],
+  '26': ['A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭'],
+  '27': ['D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯'],
+  '28': ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭'],
+  '29': ['A♯', 'B♯', 'C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯'],
+  '30': ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭']
+}
+
 # Scale Pattern Generator Program
 
 puts intro_text_block.content
-
 scales_list_input = gets.chomp.to_i
 
 if scales_list_input == 1
@@ -25,68 +57,10 @@ else
 end
 
 puts "Which Scale? Please choose a number between 1 and 30."
-user_input_scale = gets.chomp.to_i
+user_input_scale = gets.chomp
 
-if user_input_scale == 1
-  scale = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C']
-elsif user_input_scale == 2
-  scale = ['G', 'A', 'B', 'C', 'D', 'E', 'F♯', 'G']
-elsif user_input_scale == 3
-  scale = ['D', 'E', 'F♯', 'G', 'A', 'B', 'C♯', 'D']
-elsif user_input_scale == 4
-  scale = ['A', 'B', 'C♯', 'D', 'E', 'F♯', 'G♯', 'A']
-elsif user_input_scale == 5
-  scale = ['E', 'F♯', 'G♯', 'A', 'B', 'C♯', 'D♯', 'E']
-elsif user_input_scale == 6
-  scale = ['F', 'G', 'A', 'B♭', 'C', 'D', 'E', 'F']
-elsif user_input_scale == 7
-  scale = ['B♭', 'C', 'D', 'E♭', 'F', 'G', 'A', 'B♭']
-elsif user_input_scale == 8
-  scale = ['E♭', 'F', 'G', 'A♭', 'B♭', 'C', 'D', 'E♭']
-elsif user_input_scale == 9
-  scale = ['A♭', 'B♭', 'C', 'D♭', 'E♭', 'F', 'G', 'A♭']
-elsif user_input_scale == 10
-  scale = ['B', 'C♯', 'D♯', 'E', 'F♯', 'G♯', 'A♯', 'B']
-elsif user_input_scale == 11
-  scale = ['C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭', 'B♭', 'C♭']
-elsif user_input_scale == 12
-  scale = ['F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯', 'E♯', 'F♯']
-elsif user_input_scale == 13
-  scale = ['G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F', 'G♭']
-elsif user_input_scale == 14
-  scale = ['C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B♯', 'C♯']
-elsif user_input_scale == 15
-  scale = ['D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭', 'C', 'D♭']
-elsif user_input_scale == 16
-  scale = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'A']
-elsif user_input_scale == 17
-  scale = ['E', 'F♯', 'G', 'A', 'B', 'C', 'D', 'E']
-elsif user_input_scale == 18
-  scale = ['B', 'C♯', 'D', 'E', 'F♯', 'G', 'A', 'B']
-elsif user_input_scale == 19
-  scale = ['F♯', 'G♯', 'A', 'B', 'C♯', 'D', 'E', 'F♯']
-elsif user_input_scale == 20
-  scale = ['C♯', 'D♯', 'E', 'F♯', 'G♯', 'A', 'B', 'C♯']
-elsif user_input_scale == 21
-  scale = ['F', 'G', 'A♭', 'B♭', 'C', 'D♭', 'E♭', 'F']
-elsif user_input_scale == 22
-  scale = ['C', 'D', 'E♭', 'F', 'G', 'A♭', 'B♭', 'C']
-elsif user_input_scale == 23
-  scale = ['G', 'A', 'B♭', 'C', 'D', 'E♭', 'F', 'G']
-elsif user_input_scale == 24
-  scale = ['D', 'E', 'F', 'G', 'A', 'B♭', 'C', 'D']
-elsif user_input_scale == 25
-  scale = ['G♯', 'A♯', 'B', 'C♯', 'D♯', 'E', 'F♯', 'G♯']
-elsif user_input_scale == 26
-  scale = ['A♭', 'B♭', 'C♭', 'D♭', 'E♭', 'F♭', 'G♭', 'A♭']
-elsif user_input_scale == 27
-  scale = ['D♯', 'E♯', 'F♯', 'G♯', 'A♯', 'B', 'C♯', 'D♯']
-elsif user_input_scale == 28
-  scale = ['E♭', 'F', 'G♭', 'A♭', 'B♭', 'C♭', 'D♭', 'E♭']
-elsif user_input_scale == 29
-  scale = ['A♯', 'B♯', 'C♯', 'D♯', 'E♯', 'F♯', 'G♯', 'A♯']
-elsif user_input_scale == 30
-  scale = ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭']
+if scales[user_input_scale.to_sym]
+  scale = scales[user_input_scale.to_sym]
 else
   puts "Invalid input. Please try again."
   return
@@ -101,7 +75,6 @@ puts "\n"
 
 if [2, 4, 8, 16, 32].include?(beat_count)
   new_scale_pattern = Array.new
-
   length = scale.length
 
   beat_count.times do
