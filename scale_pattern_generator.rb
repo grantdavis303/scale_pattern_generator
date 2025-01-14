@@ -57,10 +57,10 @@ else
 end
 
 puts "Which Scale? Please choose a number between 1 and 30."
-user_input_scale = gets.chomp
+user_input_scale = gets.chomp.to_sym
 
 if scales[user_input_scale.to_sym]
-  scale = scales[user_input_scale.to_sym]
+  scale = scales[user_input_scale]
 else
   puts "Invalid input. Please try again."
   return
@@ -74,16 +74,16 @@ beat_count = gets.chomp.to_i
 puts "\n"
 
 if [2, 4, 8, 16, 32].include?(beat_count)
-  new_scale_pattern = Array.new
+  generated_scale_pattern = Array.new
   length = scale.length
 
   beat_count.times do
     index_position = rand(0...length)
-    new_scale_pattern << scale[index_position]
+    generated_scale_pattern << scale[index_position]
   end
 
   puts "Generated pattern:"
-  p new_scale_pattern
+  p generated_scale_pattern
 else
   puts "Invalid input. Please try again."
 end
