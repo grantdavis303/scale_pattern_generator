@@ -3,4 +3,3 @@ Welcome to the Scale Pattern Generator!
 1. Major Scales
 2. Minor Scales
 
-List which set of scales? Please choose either 1 or 2.
