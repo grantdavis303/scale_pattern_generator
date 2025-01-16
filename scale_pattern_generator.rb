@@ -1,15 +1,6 @@
 require 'pry'
+require './lib/session.rb'
 require './lib/text_block.rb'
-
-intro_text = File.read('./text_blocks/intro_text.txt')
-invalid_input_text = File.read('./text_blocks/invalid_input_text.txt')
-major_scales_list = File.read('./text_blocks/major_scales_list.txt')
-minor_scales_list = File.read('./text_blocks/minor_scales_list.txt')
-
-intro_text_block = TextBlock.new(intro_text)
-invalid_input_text_block = TextBlock.new(invalid_input_text)
-major_scales_text_block = TextBlock.new(major_scales_list)
-minor_scales_text_block = TextBlock.new(minor_scales_list)
 
 scales = {
   '1': ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'C'],
@@ -44,64 +35,74 @@ scales = {
   '30': ['B♭', 'C', 'D♭', 'E♭', 'F', 'G♭', 'A♭', 'B♭']
 }
 
+session = Session.new(scales)
+session.start
+
+# def calculate_beat_sum(generated_scale_pattern)
+#   generated_scale_pattern.map { |value| value if value.class == Integer }.compact.sum
+# end
+
 # Scale Pattern Generator Program
 
-puts intro_text_block.content
+# puts intro_text_block.content
 
-puts "List which set of scales? Please choose either 1 or 2."
-scales_list_input = gets.chomp.to_i
+# puts "List which set of scales? Please choose either 1 or 2."
+# scales_list_input = gets.chomp.to_i
 
-puts "\n"
+# puts "\n"
 
-if scales_list_input == 1
-  puts major_scales_text_block.content
-elsif scales_list_input == 2
-  puts minor_scales_text_block.content
-else
-  puts invalid_input_text_block.content
-  return
-end
+# if scales_list_input == 1
+#   puts major_scales_text_block.content
+# elsif scales_list_input == 2
+#   puts minor_scales_text_block.content
+# else
+#   puts invalid_input_text_block.content
+#   return
+# end
 
-puts "Which Scale? Please choose a number between 1 and 30."
-user_input_scale = gets.chomp.to_sym
+# puts "Which scale? Please choose a number between 1 and 30."
+# user_input_scale = gets.chomp.to_sym
 
-if scales[user_input_scale.to_sym]
-  scale = scales[user_input_scale]
-else
-  puts "\n"
-  puts invalid_input_text_block.content
-  return
-end
+# if scales[user_input_scale.to_sym]
+#   scale = scales[user_input_scale]
+# else
+#   puts "\n"
+#   puts invalid_input_text_block.content
+#   return
+# end
 
-puts "\n"
-puts "Beat Count? Please choose between 2, 4, 8, 16, and 32."
-beat_count = gets.chomp.to_i
+# puts "\n"
+# puts "Beat count? Please choose between 2, 4, 8, 16, and 32."
+# beat_count = gets.chomp.to_i
 
-puts "\n"
-puts "Add variation to time signature? Please choose y or n."
-input_time_signature = gets.chomp
+# puts "\n"
+# puts "Add variation to time signature? Please choose y or n."
+# input_time_signature = gets.chomp
 
-if input_time_signature == 'y'
-  time_signature = true
-else
-  time_signature = false
-end
+# if input_time_signature == 'y'
+#   vary_time_signature = true
+# else
+#   vary_time_signature = false
+# end
 
-if [2, 4, 8, 16, 32].include?(beat_count)
-  generated_scale_pattern = Array.new
-  beat_counter = 0 if time_signature == true
+# if [2, 4, 8, 16, 32].include?(beat_count)
+#   generated_scale_pattern = Array.new
 
-  beat_count.times do
-    index_position = rand(0...scale.length)
-    generated_scale_pattern << scale[index_position]
+#   if vary_time_signature == true
+#     beat_sum = 0
 
-    # Add functionality for time_signature being true
-  end
+#     until beat_sum == beat_count
+#       generated_scale_pattern << scale[rand(0...scale.length)]
+#       generated_scale_pattern << rand(1...4)
+#       beat_sum = calculate_beat_sum(generated_scale_pattern)
+#     end
+#   else
+#     beat_count.times { generated_scale_pattern << scale[rand(0...scale.length)] }
+#   end
 
-  puts "\n"
-  puts "Generated pattern:"
-  p generated_scale_pattern
-else
-  puts "\n"
-  puts invalid_input_text_block.content
-end
+#   puts "\n"
+#   puts "Generated pattern: #{generated_scale_pattern}"
+# else
+#   puts "\n"
+#   puts invalid_input_text_block.content
+# end
