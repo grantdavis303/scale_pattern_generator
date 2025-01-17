@@ -13,10 +13,9 @@ class Session
 
     puts intro_text_block.content
 
+    # Question 1
     puts "List which set of scales? Please choose either 1 or 2."
     scales_list_input = gets.chomp.to_i
-
-    puts "\n"
 
     if scales_list_input == 1
       puts major_scales_text_block.content
@@ -27,22 +26,28 @@ class Session
       return
     end
 
+    # Question 2
     puts "Which scale? Please choose a number between 1 and 30."
     user_input_scale = gets.chomp.to_sym
 
     if scales[user_input_scale.to_sym]
       scale = scales[user_input_scale]
     else
-      puts "\n"
       puts invalid_input_text_block.content
       return
     end
 
-    puts "\n"
+    # Question 3
     puts "Beat count? Please choose between 2, 4, 8, 16, and 32."
     beat_count = gets.chomp.to_i
 
-    puts "\n"
+    if [2, 4, 8, 16, 32].include?(beat_count)
+      beat_count_valid = true
+    else
+      beat_count_valid = false
+    end
+
+    # Question 4
     puts "Add variation to time signature? Please choose y or n."
     input_time_signature = gets.chomp
 
@@ -52,28 +57,41 @@ class Session
       vary_time_signature = false
     end
 
-    if [2, 4, 8, 16, 32].include?(beat_count)
-      generated_scale_pattern = Array.new
+    # Summary
+    generated_scale_pattern = Array.new
 
-      if vary_time_signature == true
-        until calculate_beat_sum(generated_scale_pattern) >= beat_count
-          generated_scale_pattern << scale[rand(0...scale.length)]
-          generated_scale_pattern << rand(1...4)
+    if beat_count_valid == true && vary_time_signature == true
+      sum = 0
 
-          if calculate_beat_sum(generated_scale_pattern) > beat_count
-            beat_sum = calculate_beat_sum(generated_scale_pattern)
-            generated_scale_pattern[generated_scale_pattern.length - 1] = beat_sum - beat_count
-            break
+      numbers_array = Array.new
+      until sum >= beat_count
+        random_number = rand(1..4)
+        numbers_array << random_number
+        sum += random_number
+
+        # Needs fixing
+        if sum > beat_count
+          difference = sum - beat_count
+          difference.times do
+            numbers_array[rand(0..numbers_array.length - 1)] -= 1
           end
         end
-      else
-        beat_count.times { generated_scale_pattern << scale[rand(0...scale.length)] }
       end
 
-      puts "\n"
+      puts "Count: #{numbers_array.length}"
+      puts "Sum: #{numbers_array.sum}"
+      puts "New Arr: #{numbers_array}"
+
+      numbers_array.each do |number|
+        generated_scale_pattern << scale[rand(0..scale.length - 1)]
+        generated_scale_pattern << number
+      end
+
+      puts "Generated pattern: #{generated_scale_pattern}"
+    elsif beat_count_valid == true && vary_time_signature == false
+      beat_count.times { generated_scale_pattern << scale[rand(0..scale.length)] }
       puts "Generated pattern: #{generated_scale_pattern}"
     else
-      puts "\n"
       puts invalid_input_text_block.content
     end
   end
