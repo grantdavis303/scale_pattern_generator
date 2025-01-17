@@ -61,13 +61,6 @@ class Session
       end
 
       puts "\n"
-
-      puts "Random time signatures variations:"
-      4.times do
-        p generate_random_time_signature(beat_count)
-      end
-
-      puts "\n"
       puts "Generated pattern: #{generated_scale_pattern}"
     else
       puts invalid_input_text_block.content
@@ -76,23 +69,5 @@ class Session
 
   def initialize_text_file(path)
     TextBlock.new(File.read(path))
-  end
-
-  def generate_random_time_signature(beat_count)
-    array = Array.new
-    remaining = beat_count
-    random_number = rand(1..4)
-
-    until remaining == 0
-      if remaining <= 4
-        array << remaining
-        remaining -= remaining
-      else
-        array << random_number
-        remaining -= random_number
-      end
-    end
-
-    array
   end
 end
