@@ -17,6 +17,8 @@ class Session
     puts "List which set of scales? Please choose either 1 or 2."
     scales_list_input = gets.chomp.to_i
 
+    puts "\n"
+
     if scales_list_input == 1
       puts major_scales_text_block.content
     elsif scales_list_input == 2
@@ -37,6 +39,8 @@ class Session
       return
     end
 
+    puts "\n"
+
     # Question 3
     puts "Beat count? Please choose between 2, 4, 8, 16, and 32."
     beat_count = gets.chomp.to_i
@@ -47,49 +51,23 @@ class Session
       beat_count_valid = false
     end
 
-    # Question 4
-    puts "Add variation to time signature? Please choose y or n."
-    input_time_signature = gets.chomp
-
-    if input_time_signature == 'y'
-      vary_time_signature = true
-    else
-      vary_time_signature = false
-    end
-
     # Summary
-    generated_scale_pattern = Array.new
+    if beat_count_valid == true
+      generated_scale_pattern = Array.new
 
-    if beat_count_valid == true && vary_time_signature == true
-      sum = 0
-
-      numbers_array = Array.new
-      until sum >= beat_count
-        random_number = rand(1..4)
-        numbers_array << random_number
-        sum += random_number
-
-        # Needs fixing
-        if sum > beat_count
-          difference = sum - beat_count
-          difference.times do
-            numbers_array[rand(0..numbers_array.length - 1)] -= 1
-          end
-        end
+      beat_count.times do
+        random_note = rand(0..scale.length - 1)
+        generated_scale_pattern << scale[random_note]
       end
 
-      puts "Count: #{numbers_array.length}"
-      puts "Sum: #{numbers_array.sum}"
-      puts "New Arr: #{numbers_array}"
+      puts "\n"
 
-      numbers_array.each do |number|
-        generated_scale_pattern << scale[rand(0..scale.length - 1)]
-        generated_scale_pattern << number
+      puts "Random time signatures variations:"
+      4.times do
+        p generate_random_time_signature(beat_count)
       end
 
-      puts "Generated pattern: #{generated_scale_pattern}"
-    elsif beat_count_valid == true && vary_time_signature == false
-      beat_count.times { generated_scale_pattern << scale[rand(0..scale.length)] }
+      puts "\n"
       puts "Generated pattern: #{generated_scale_pattern}"
     else
       puts invalid_input_text_block.content
@@ -100,7 +78,21 @@ class Session
     TextBlock.new(File.read(path))
   end
 
-  def calculate_beat_sum(generated_scale_pattern)
-    generated_scale_pattern.map { |value| value if value.class == Integer }.compact.sum
+  def generate_random_time_signature(beat_count)
+    array = Array.new
+    remaining = beat_count
+    random_number = rand(1..4)
+
+    until remaining == 0
+      if remaining <= 4
+        array << remaining
+        remaining -= remaining
+      else
+        array << random_number
+        remaining -= random_number
+      end
+    end
+
+    array
   end
 end
