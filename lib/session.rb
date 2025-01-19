@@ -6,6 +6,22 @@ class Session
   end
 
   def start
+    loop do
+      generate_scale_pattern
+
+      puts "\n"
+      puts "Generate another? Please choose either y or n."
+      go_again = gets.chomp
+
+      if go_again == 'y'
+        start
+      else
+        break
+      end
+    end
+  end
+
+  def generate_scale_pattern
     intro_text_block = initialize_text_file('./text_blocks/intro_text.txt')
     invalid_input_text_block = initialize_text_file('./text_blocks/invalid_input_text.txt')
     major_scales_text_block = initialize_text_file('./text_blocks/major_scales_list.txt')
