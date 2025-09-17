@@ -2,16 +2,16 @@
 
 A simple Ruby program that generates a pattern based off a given musical scale. Used to generate ideas when it comes to writing melodies and harmonies.
 
-## Dependencies
+## Local Setup
 
-* Ruby 3.2.2
+1. Navigate to Repo
 
-## How to Use
-
-```bash
+```
 cd scale_pattern_generator
-ruby scale_pattern_generator.rb
+```
 
-# Output
-Generated pattern: ["A♭", "D♭", "C", "B♭", "A♭", "F", "E♭", "G♭"]
+2. Run the Ruby File
+
+```
+ruby scale_pattern_generator.rb
 ```
